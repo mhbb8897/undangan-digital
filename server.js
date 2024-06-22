@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const port = 3000;
 
+app.use(cors());
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
@@ -14,7 +14,5 @@ app.get("/api/query", (req, res) => {
   res.json({ query });
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
-app.use(cors());
+// Ekspor aplikasi Express
+module.exports = app;
