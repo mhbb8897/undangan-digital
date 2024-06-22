@@ -1,0 +1,258 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  background: url("/assets/undangan.png");
+  background-size: cover;
+  height: 100%;
+}
+
+:root {
+  --text-small: 14px;
+  --text-medium: 20px;
+  --text-large: 70px;
+  --styling-font-max: "Sofia";
+  --styling-font-medium: "Crimson Text", serif;
+}
+
+/* Typography */
+p {
+  margin: 5% 0%;
+  font-size: var(--text-medium);
+}
+
+/* Container */
+.container {
+  margin: auto 19%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.container .row {
+  flex: 1 1 1rem;
+  text-align: center;
+}
+
+.container .row img {
+  width: 380px;
+  padding: 40px;
+  height: 400px;
+}
+
+/* Sections */
+.img-header {
+  overflow: hidden;
+  position: relative;
+  width: auto;
+  height: auto;
+  padding-bottom: 5rem;
+}
+
+.top-w-name {
+  text-align: center;
+  line-height: 3rem;
+  width: 100%;
+}
+
+.top-w-name img {
+  height: auto;
+  width: 100%;
+  border-radius: 10px;
+  max-width: 50%;
+}
+
+.content-name,
+.remarks-content {
+  line-height: 2rem;
+  border-radius: 10px;
+  margin: 2%;
+}
+
+.img-content {
+  height: auto;
+  padding: 4% 19%;
+  justify-content: center;
+}
+
+.covid-content {
+  width: 100%;
+}
+
+.covid-content p,
+.covid-content h2 {
+  text-align: center;
+}
+
+.ex-content {
+  margin: 0% 10%;
+  justify-content: center;
+  display: grid;
+  grid-template-rows: repeat(2, 2fr);
+  grid-template-columns: repeat(2, 2fr);
+}
+
+.in-content {
+  padding: 8%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  position: relative;
+}
+
+.in-content img {
+  width: 100px;
+  height: 100px;
+  margin-left: 30px;
+}
+
+.in-content span {
+  margin-left: 15px;
+}
+
+.text-content a {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-content a:hover {
+  text-decoration: underline;
+}
+
+/* maps */
+.maps {
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 2%;
+}
+
+.maps>h2 {
+  padding: 10px;
+}
+
+#my-map-canvas img.text-marker {
+  max-width: none !important;
+  background: none !important;
+  justify-content: center;
+}
+
+.maps-frame {
+  display: flex;
+  justify-content: center;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  background: #2f2e2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+.social-icon,
+.menu-footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link img {
+  width: 40px;
+  height: 40px;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+  color: black;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.footer ul {
+  padding-left: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  body {
+    align-self: start;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .container {
+    margin: auto 3%;
+  }
+
+  .top-w-name img {
+    max-width: 80%;
+  }
+
+  .in-content {
+    flex-direction: column;
+  }
+
+  .in-content span {
+    padding-top: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .container .row img {
+    padding: 2% 0%;
+    width: 300px;
+    height: 310px;
+  }
+}
