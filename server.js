@@ -13,6 +13,11 @@ app.get("/api/query", (req, res) => {
   const query = req.query.query || "default";
   res.json({ query });
 });
-
+if (require.main === module) {
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
+}
 // Ekspor aplikasi Express
 module.exports = app;
