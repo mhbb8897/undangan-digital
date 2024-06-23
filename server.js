@@ -19,5 +19,4 @@ if (require.main === module) {
     console.log(`Server is running on port ${port}`);
   });
 }
-// Ekspor aplikasi Express
 module.exports = app;
