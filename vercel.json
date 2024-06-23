@@ -12,8 +12,8 @@
         "dest": "index.html"
       },
       {
-        "src": "/static/*",
-        "dest": "/static/index.html"
+        "src": "/public/*",
+        "dest": "/public/index.html"
       }
     ]
   }
