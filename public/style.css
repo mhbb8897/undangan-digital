@@ -127,7 +127,7 @@ main {
 }
 
 .in-content {
-  display: flex;
+  display: grid;
   flex-direction: column;
   border: 2px solid gray;
   padding: 0.5rem;
