@@ -7,14 +7,6 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
-  font-family: "Times New Roman", Times, serif;
-}
-
-body {
-  background: url("/assets/undangan.png");
-  background-size: cover;
-  height: 100%;
-  width: 100%;
 }
 
 :root {
@@ -22,21 +14,22 @@ body {
   --text-medium: 20px;
   --text-large: 70px;
   --styling-font-max: "Sofia";
-  --styling-font-medium: "Crimson Text", serif;
+  --styling-font-medium: "Playwrite MX", cursive;
 }
 
-/* Typography */
-p {
-  margin: 5% 0%;
-  font-size: var(--text-medium);
+body {
+  height: 100%;
+  width: 100%;
 }
 
 /* Container */
 .container {
   margin: auto 19%;
+  padding: 2% 0;
   display: flex;
   flex-direction: column;
   text-align: center;
+  gap: 0.9rem;
 }
 
 .container .row {
@@ -46,37 +39,38 @@ p {
 
 .container .row img {
   width: 380px;
-  padding: 40px;
   height: 400px;
+  padding: 40px;
+}
+
+/* Main */
+main {
+  background-image: url("/assets/header-fix.png"), url("/assets/bg.png");
+  background-repeat: no-repeat, repeat;
+  background-position: top left, top left;
+  background-size: contain, cover;
+  position: relative;
 }
 
 /* Sections */
-.img-header {
-  overflow: hidden;
-  position: relative;
-  width: auto;
-  height: auto;
-  padding-bottom: 5rem;
-}
-
 .top-w-name {
   text-align: center;
-  line-height: 3rem;
+  line-height: 2rem;
   width: 100%;
+  font-size: var(--text-medium);
 }
 
 .top-w-name img {
   height: auto;
   width: 100%;
-  border-radius: 10px;
   max-width: 50%;
+  border-radius: 10px;
 }
 
 .content-name,
 .remarks-content {
   line-height: 2rem;
   border-radius: 10px;
-  margin: 2%;
 }
 
 .img-content {
@@ -85,56 +79,14 @@ p {
   justify-content: center;
 }
 
-.covid-content {
+/* Maps */
+.location {
   width: 100%;
 }
 
-.covid-content p,
-.covid-content h2 {
-  text-align: center;
-}
-
-.ex-content {
-  margin: 0% 10%;
-  justify-content: center;
-  display: grid;
-  grid-template-rows: repeat(2, 2fr);
-  grid-template-columns: repeat(2, 2fr);
-}
-
-.in-content {
-  padding: 8%;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  display: flex;
-  position: relative;
-}
-
-.in-content img {
-  width: 100px;
-  height: 100px;
-  margin-left: 30px;
-}
-
-.in-content span {
-  margin-left: 15px;
-}
-
-.text-content a {
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
-.text-content a:hover {
-  text-decoration: underline;
-}
-
-/* maps */
 .maps {
   display: flex;
-  justify-items: center;
+  align-items: center;
   flex-direction: column;
   text-align: center;
   margin: 2%;
@@ -150,9 +102,104 @@ p {
   justify-content: center;
 }
 
-.maps-frame {
+/* Notes Content */
+.notes-content {
   display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.gift-content {
+  width: 100%;
+}
+
+.gift-content h2 {
+  padding: 2% 0;
+}
+
+.ex-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.in-content {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid gray;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.notes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.notes h2 {
+  text-align: center;
+  padding: 2% 0;
+}
+
+.form-notes {
+  border: 2px solid gray;
+  text-align: start;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.form-notes>input {
+  border: 2px solid gray;
+  padding: 5px;
+  width: 100%;
+  max-height: 300px;
+  border-radius: 5px;
+
+}
+
+.form-notes>textarea {
+  width: 100%;
+  max-height: 300px;
+  box-sizing: border-box;
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* Surah Content */
+.surah-content {
+  text-align: center;
+  width: 100%;
+  padding: 5px;
+}
+
+.surah-content p {
+  padding: 5px;
+}
+/* Wedding name */
+.w-name {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.w-name p {
+  font-family: var(--styling-font-medium);
+  padding: 5px;
+  font-size: var(--text-medium);
+  line-height: 0.5rem;
+}
+
+.w-name audio {
+  border-radius: 5px;
 }
 
 /* Footer */
@@ -166,53 +213,6 @@ p {
   color: white;
 }
 
-.social-icon,
-.menu-footer {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  flex-wrap: wrap;
-  text-align: center;
-}
-
-.social-icon__item,
-.menu__item {
-  list-style: none;
-}
-
-.social-icon__link img {
-  width: 40px;
-  height: 40px;
-}
-
-.social-icon__link {
-  font-size: 2rem;
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-}
-
-.social-icon__link:hover {
-  transform: translateY(-10px);
-}
-
-.menu__link {
-  font-size: 1.2rem;
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-  text-decoration: none;
-  opacity: 0.75;
-  font-weight: 300;
-  color: black;
-}
-
-.menu__link:hover {
-  opacity: 1;
-}
-
 .footer p {
   margin: 15px 0 10px 0;
   font-size: 1rem;
@@ -220,16 +220,15 @@ p {
   text-align: center;
 }
 
-.footer ul {
-  padding-left: 0;
-}
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  body {
-    align-self: start;
-    background-size: contain;
-    background-repeat: no-repeat;
+  main {
+    background-image: url("/assets/header-fix.png"), url("/assets/bg.png");
+    background-repeat: no-repeat, repeat-y;
+    background-position: top center, top left;
+    background-size: 100% auto, contain;
+    background-attachment: scroll, scroll;
   }
 
   .container {
@@ -238,6 +237,13 @@ p {
 
   .top-w-name img {
     max-width: 80%;
+  }
+
+  .ex-content {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    gap: 1rem;
   }
 
   .in-content {
@@ -252,8 +258,13 @@ p {
   }
 
   .container .row img {
-    padding: 2% 0%;
     width: 300px;
     height: 310px;
+    padding: 2% 0;
+  }
+
+  .notes-content {
+    display: flex;
+    flex-direction: column;
   }
 }
