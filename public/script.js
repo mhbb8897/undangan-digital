@@ -22,3 +22,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+const copyButtons = document.querySelectorAll(".in-content span button.copy-text");
+
+copyButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+        const copiedText = button.previousElementSibling.textContent;
+        navigator.clipboard.writeText(copiedText);
+        button.textContent = "Copied!";
+        setTimeout(() => {
+            button.textContent = "Copy";
+        }, 2000);
+    });
+});
+
