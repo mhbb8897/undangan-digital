@@ -159,15 +159,22 @@ animation-duration: 2s;
   text-align: center;
   padding: 2% 0;
 }
+.notes button {
+  padding: 2% 0;
+  border: 2px solid gray;
+  padding: 5px;
+  border-radius: 5px;
+}
 
 .form-notes {
   border: 2px solid gray;
   text-align: start;
   width: 100%;
-  align-items: center;
-  justify-content: space-around;
+  display: flex;
   padding: 5px;
   border-radius: 10px;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .form-notes input {
