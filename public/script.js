@@ -6,9 +6,10 @@ window.onload = () => {
     document.getElementById("heading").textContent = query;
   }
 };
+
 document.addEventListener("DOMContentLoaded", function () {
-  var audio = document.getElementById("myAudio");
-  var playPromise = audio.play();
+  const audio = document.getElementById("myAudio");
+  const playPromise = audio.play();
 
   if (playPromise !== undefined) {
     playPromise
@@ -44,16 +45,41 @@ copyButtons.forEach((button) => {
   });
 });
 
-
 document.querySelector(".submit-btn").addEventListener("click", function () {
   const noteContent = document.getElementById("note").value;
+  const nameContent = document.getElementById("name").value;
+  const currentTime = new Date();
+  const formattedTime = `${currentTime
+    .getDate()
+    .toString()
+    .padStart(2, "0")}-${(currentTime.getMonth() + 1)
+    .toString()
+    .padStart(2, "0")}-${currentTime.getFullYear()} ${currentTime
+    .getHours()
+    .toString()
+    .padStart(2, "0")}:${currentTime
+    .getMinutes()
+    .toString()
+    .padStart(2, "0")}:${currentTime.getSeconds().toString().padStart(2, "0")}`;
+
+  if (!noteContent || !nameContent) {
+    alert("Mohon lengkapi isi nama dan pesan");
+    return;
+  }
+
+  // Membuat objek data
+  const data = {
+    name: nameContent,
+    isiPesan: noteContent,
+    waktu: formattedTime,
+  };
 
   fetch("/save", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ isiPesan: noteContent }),
+    body: JSON.stringify(data), // Menggunakan objek data
   })
     .then((response) => response.json())
     .then((data) => {
