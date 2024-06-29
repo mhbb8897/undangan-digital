@@ -36,3 +36,10 @@ copyButtons.forEach((button) => {
     });
 });
 
+const textarea = document.getElementsByTagName('textarea');
+const jsonText = textarea.value;
+const jsonData = JSON.parse(jsonText);
+
+// Simpan data ke dalam file JSON
+const fs = require('fs');
+fs.writeFileSync('message.json', JSON.stringify(jsonData));
