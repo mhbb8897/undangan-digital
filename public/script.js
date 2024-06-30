@@ -11,12 +11,7 @@ const audio = document.getElementById("myAudio");
 
 // Mendeteksi event scroll
 window.addEventListener("scroll", function () {
-  if (!audio.paused || audio.currentTime > 0) {
-    return;
-  }
-
-  audio.play();
-  audio.style.visibility = "visible";
+  myAudio.play();
 });
 const copyButtons = document.querySelectorAll(
   ".in-content span button.copy-text"
@@ -42,14 +37,14 @@ submitButton.addEventListener("click", function () {
     .getDate()
     .toString()
     .padStart(2, "0")}-${(currentTime.getMonth() + 1)
-    .toString()
-    .padStart(2, "0")}-${currentTime.getFullYear()} ${currentTime
-    .getHours()
-    .toString()
-    .padStart(2, "0")}:${currentTime
-    .getMinutes()
-    .toString()
-    .padStart(2, "0")}:${currentTime.getSeconds().toString().padStart(2, "0")}`;
+      .toString()
+      .padStart(2, "0")}-${currentTime.getFullYear()} ${currentTime
+        .getHours()
+        .toString()
+        .padStart(2, "0")}:${currentTime
+          .getMinutes()
+          .toString()
+          .padStart(2, "0")}:${currentTime.getSeconds().toString().padStart(2, "0")}`;
 
   if (!noteContent || !nameContent) {
     alert("Mohon lengkapi isi nama dan pesan");
