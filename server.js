@@ -4,10 +4,17 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const fs = require("fs-extra").promises;
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.static("public"));
 app.use(bodyParser.json());
 
+const corsOptions = {
+  origin: '*', // Anda bisa mengganti '*' dengan URL spesifik jika perlu
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+app.use(cors(corsOptions));
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
