@@ -39,10 +39,8 @@ app.post("/save", async (req, res) => {
         jsonData = JSON.parse(fileData);
       }
     }
-
     // Tambahkan data baru ke array
     jsonData.push(newData);
-
     // Tulis kembali ke file JSON
     await fs.writeFile(filePath, JSON.stringify(jsonData, null, 2));
 
