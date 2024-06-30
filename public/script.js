@@ -7,16 +7,16 @@ window.onload = () => {
   }
 };
 
-const audio = document.getElementById('myAudio');
+const audio = document.getElementById("myAudio");
 
 // Mendeteksi event scroll
-window.addEventListener('scroll', function() {
-    if (!audio.paused || audio.currentTime > 0) {
-        return; 
-    }
+window.addEventListener("scroll", function () {
+  if (!audio.paused || audio.currentTime > 0) {
+    return;
+  }
 
-    audio.play();
-    audio.style.visibility = 'visible';
+  audio.play();
+  audio.style.visibility = "visible";
 });
 const copyButtons = document.querySelectorAll(
   ".in-content span button.copy-text"
@@ -33,7 +33,8 @@ copyButtons.forEach((button) => {
   });
 });
 
-document.querySelector(".submit-btn").addEventListener("click", function () {
+const submitButton = document.querySelector(".submit-btn");
+submitButton.addEventListener("click", function () {
   const noteContent = document.getElementById("note").value;
   const nameContent = document.getElementById("name").value;
   const currentTime = new Date();
@@ -61,7 +62,6 @@ document.querySelector(".submit-btn").addEventListener("click", function () {
     isiPesan: noteContent,
     waktu: formattedTime,
   };
-
   fetch("/save", {
     method: "POST",
     headers: {
@@ -72,7 +72,10 @@ document.querySelector(".submit-btn").addEventListener("click", function () {
     .then((response) => response.json())
     .then((data) => {
       console.log("Success:", data);
-      alert("Data has been saved successfully!");
+      alert("Terimakasih atas pesannya!");
+      submitButton.disabled = true;
+      submitButton.style.cursor = "auto";
+      alert("Batas pengiriman pesan hanya 1x");
     })
     .catch((error) => {
       console.error("Error:", error);
