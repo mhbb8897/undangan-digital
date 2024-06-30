@@ -7,29 +7,17 @@ window.onload = () => {
   }
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-  const audio = document.getElementById("myAudio");
-  const playPromise = audio.play();
+const audio = document.getElementById('myAudio');
 
-  if (playPromise !== undefined) {
-    playPromise
-      .then(function () {
-        console.log("Audio is playing automatically");
-      })
-      .catch(function (error) {
-        console.log("Audio autoplay was prevented");
-        // Wait for user interaction
-        document.body.addEventListener(
-          "click",
-          function () {
-            audio.play();
-          },
-          { once: true }
-        );
-      });
-  }
+// Mendeteksi event scroll
+window.addEventListener('scroll', function() {
+    if (!audio.paused || audio.currentTime > 0) {
+        return; 
+    }
+
+    audio.play();
+    audio.style.visibility = 'visible';
 });
-
 const copyButtons = document.querySelectorAll(
   ".in-content span button.copy-text"
 );
