@@ -116,12 +116,12 @@ header {
 
 /* Remarks Content */
 .remarks-content {
-  line-height: 2rem;
+  line-height: 1.5rem;
 }
 
 .remarks-content .animate__fadeInLeft {
   animation-duration: 2s;
-padding: 1.5rem 0;
+  padding: 1.5rem 0;
 }
 
 .anim p:nth-child(3) {
