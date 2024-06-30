@@ -17,6 +17,7 @@
   --styling-font-medium: "Great Vibes", cursive;
   --heading-font: "Playwrite US Modern", serif;
 }
+
 /* heading rule */
 .remarks-content>h3,
 .location>h2,
@@ -24,12 +25,14 @@
 .notes h2 {
   font-family: var(--heading-font);
 }
+
 .location>h2,
 .gift-content h2,
 .notes h2 {
   text-decoration: underline;
   text-decoration-thickness: 3px;
 }
+
 body {
   height: 100%;
   width: 100%;
@@ -97,6 +100,7 @@ header {
 
 .content-name p {
   opacity: 0.4;
+  line-height: 1.2rem;
 }
 
 .content-name .animate__fadeInLeft,
@@ -115,10 +119,14 @@ header {
   line-height: 2rem;
 }
 
-.remarks-content .animate__fadeInLeft{
+.remarks-content .animate__fadeInLeft {
   animation-duration: 2s;
+padding: 1.5rem 0;
 }
 
+.anim p:nth-child(3) {
+  line-height: 1.2rem;
+}
 
 .remarks-content .anim {
   line-height: 3rem;
@@ -147,9 +155,11 @@ header {
   background: none !important;
   justify-content: center;
 }
-iframe{
+
+iframe {
   max-width: 100%;
 }
+
 /* Notes Content */
 .notes-content {
   display: flex;
