@@ -147,7 +147,9 @@ header {
   background: none !important;
   justify-content: center;
 }
-
+iframe{
+  max-width: 100%;
+}
 /* Notes Content */
 .notes-content {
   display: flex;
