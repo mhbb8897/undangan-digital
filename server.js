@@ -2,9 +2,8 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const fs = require("fs").promises;
+const fs = require("fs-extra").promises;
 
-// Middleware
 app.use(cors());
 app.use(express.static("public"));
 app.use(bodyParser.json());
@@ -24,25 +23,28 @@ app.post("/save", async (req, res) => {
   try {
     let jsonData = [];
 
-    // Path file diubah sesuai dengan path yang diterima Vercel
-    const filePath = path.join(__dirname, "public", "message.json");
-
-    // Check apakah file sudah ada
-    const fileExists = await fs.access(filePath)
+    // Check if the file exists
+    const fileExists = await fs
+      .access("public/message.json")
       .then(() => true)
       .catch(() => false);
 
-    // Jika file sudah ada, baca datanya
+    // If file exists, read existing data from JSON file
     if (fileExists) {
-      const fileData = await fs.readFile(filePath, "utf8");
+      const fileData = await fs.readFile("public/message.json", "utf8");
       if (fileData) {
         jsonData = JSON.parse(fileData);
       }
     }
-    // Tambahkan data baru ke array
+
+    // Append new data to the array
     jsonData.push(newData);
-    // Tulis kembali ke file JSON
-    await fs.writeFile(filePath, JSON.stringify(jsonData, null, 2));
+
+    // Write back to the JSON file
+    await fs.writeFile(
+      "public/message.json",
+      JSON.stringify(jsonData, null, 2)
+    );
 
     res.json({ message: "Data saved successfully" });
   } catch (error) {
@@ -50,7 +52,6 @@ app.post("/save", async (req, res) => {
     res.status(500).json({ message: "Error saving data" });
   }
 });
-
 
 if (require.main === module) {
   const port = process.env.PORT || 3000;
