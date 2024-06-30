@@ -56,7 +56,7 @@ submitButton.addEventListener("click", function () {
     isiPesan: noteContent,
     waktu: formattedTime,
   };
-  fetch("/save", {
+  fetch("/api/save", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
