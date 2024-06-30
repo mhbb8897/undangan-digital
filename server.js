@@ -17,7 +17,7 @@ app.get("/api/query", (req, res) => {
   res.json({ query });
 });
 
-app.post("/save", async (req, res) => {
+app.post("/api/save", async (req, res) => {
   const newData = req.body;
 
   try {
