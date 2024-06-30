@@ -8,7 +8,6 @@ window.onload = () => {
 };
 
 const audio = document.getElementById("myAudio");
-
 // Mendeteksi event scroll
 window.addEventListener("scroll", function () {
   myAudio.play();
