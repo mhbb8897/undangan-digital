@@ -9,7 +9,7 @@ window.onload = () => {
 
 // Scroll event
 const audio = document.getElementById("myAudio");
-window.addEventListener("click", function () {
+window.addEventListener("load", function () {
   myAudio.play();
 });
 const copyButtons = document.querySelectorAll(
