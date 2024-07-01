@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("heading");
   document.querySelector(".location");
   document.querySelector(".myAudio");
 });
