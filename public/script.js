@@ -1,6 +1,10 @@
+const audio = document.getElementById("myAudio");
+
+
 window.onload = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const query = urlParams.get("query");
+  myAudio.play();
 
   if (query) {
     document.getElementById("heading").textContent = query;
@@ -8,10 +12,6 @@ window.onload = () => {
 };
 
 // Scroll event
-const audio = document.getElementById("myAudio");
-window.addEventListener("load", function () {
-  myAudio.play();
-});
 const copyButtons = document.querySelectorAll(
   ".in-content span button.copy-text"
 );
