@@ -1,15 +1,15 @@
-const audio = document.getElementById("myAudio");
-
-
 window.onload = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const query = urlParams.get("query");
-  myAudio.play();
 
   if (query) {
     document.getElementById("heading").textContent = query;
   }
 };
+const audio = document.getElementById("myAudio");
+window.addEventListener("click", function () {
+  myAudio.play();
+});
 
 // Scroll event
 const copyButtons = document.querySelectorAll(
