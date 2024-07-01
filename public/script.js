@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector(".location");
+  document.querySelector(".myAudio");
+});
+
+
 window.onload = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const query = urlParams.get("query");
